@@ -3,7 +3,7 @@ package br.com.caroltmaciel.santoandre.entities;
 public class Account {
     private String id;
     private Double balance;
-    private String userId;
+    private User user;
 
     public String getId() {
         return id;
@@ -21,11 +21,11 @@ public class Account {
         this.balance = balance;
     }
 
-    public String getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 }
