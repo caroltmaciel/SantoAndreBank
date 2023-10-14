@@ -27,7 +27,4 @@ public class AccountService {
         account.setBalance(balanceUpdate);
     }
 
-    public Double balance(Account account) {
-        return account.getBalance();
-    }
 }
