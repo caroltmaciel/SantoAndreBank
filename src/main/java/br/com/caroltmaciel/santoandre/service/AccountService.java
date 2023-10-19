@@ -3,16 +3,16 @@ package br.com.caroltmaciel.santoandre.service;
 import br.com.caroltmaciel.santoandre.entities.Account;
 import br.com.caroltmaciel.santoandre.entities.User;
 
+import java.util.UUID;
+
 public class AccountService {
 
-    public Account getAccount(String userId) {
-        User userMock = new User();
-        userMock.setId(userId);
+    public Account getAccount(User user) {
 
         Account accountMock = new Account();
-        accountMock.setUser(userMock);
+        accountMock.setUser(user);
         accountMock.setBalance(0.0);
-        accountMock.setId("123");
+        accountMock.setId(UUID.randomUUID().toString());
 
         return accountMock;
     }

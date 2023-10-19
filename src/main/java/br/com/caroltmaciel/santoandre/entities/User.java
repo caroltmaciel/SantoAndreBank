@@ -5,6 +5,7 @@ public class User {
     private String firstName;
     private String lastName;
     private String taxNumber;
+    private String email;
 
     public String getId() {
         return id;
@@ -36,5 +37,13 @@ public class User {
 
     public void setTaxNumber(String taxNumber) {
         this.taxNumber = taxNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

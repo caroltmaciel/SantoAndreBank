@@ -1,12 +1,12 @@
 package br.com.caroltmaciel.santoandre.app;
 
-import java.util.Locale;
 import java.util.Scanner;
 
-import br.com.caroltmaciel.santoandre.commons.LocaleUtil;
+import br.com.caroltmaciel.santoandre.entities.User;
 import br.com.caroltmaciel.santoandre.format.MoneyFormatter;
 import br.com.caroltmaciel.santoandre.service.AccountService;
 import br.com.caroltmaciel.santoandre.entities.Account;
+import br.com.caroltmaciel.santoandre.service.UserService;
 
 public class Program {
 
@@ -15,12 +15,14 @@ public class Program {
         Scanner leitor = new Scanner(System.in);
         MoneyFormatter format = new MoneyFormatter();
 
+        UserService userService = new UserService();
+        User user = userService.create("John", "MacAndCheese", "XXX.XXX.XXX", "johnmacandcheese@xxxxx.com");
 
-
-        String userId = "carol";
+        System.out.println("Client: " + user.getFirstName() + " " + user.getLastName() + " | ID: " + user.getId());
 
         AccountService accountService = new AccountService();
-        Account account = accountService.getAccount(userId);
+        Account account = accountService.getAccount(user);
+        System.out.println("Account ID: " + account.getId());
 
         System.out.println("Balance: " + format.formatCurrency(account.getBalance()));
 
